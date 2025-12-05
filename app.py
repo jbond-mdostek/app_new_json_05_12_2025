@@ -141,12 +141,14 @@ def crear_app():
     def get_users():
         return jsonify(users), 200
     
-    #@app.route('/mapa')
-    #def get_mapa():
-    #     exec(python mapa_aduanas.py run)
+    @app.route('/mapa')
+    def mostrar_mapa():
+       dibuja_mapa = __import__('mapa_aduanas'),
+       return dibuja_mapa.mapas()
 
     return app
 
 if __name__ == '__main__':
     app = crear_app()
     app.run()
+
