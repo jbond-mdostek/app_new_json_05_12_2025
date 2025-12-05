@@ -20,6 +20,10 @@ print("*************************************************************************
 
 # webbrowser.open('https://www.python.org')
 
+#para manejarlo como un módulo:
+def mapas():
+   app = Flask(__name__)
+  
 mapa_principal_rmx = folium.Map(location=[23.634501,-102.552784], zoom_start=6)
 
 marker_cluster = MarkerCluster().add_to(mapa_principal_rmx)
@@ -1196,4 +1200,11 @@ mapa_principal_rmx.add_child(marker)
 # 4. Guardar el mapa en un archivo HTML
 
 mapa_principal_rmx.save('mapa_principal_rmx.html')
+
 webbrowser.open('mapa_principal_rmx.html')
+
+#para manejarlo como un módulo: Cerrar el módulo
+return app
+if __name__ == '__main__':
+    app = mapas()
+    app.run()
