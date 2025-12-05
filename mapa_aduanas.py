@@ -1204,7 +1204,8 @@ mapa_principal_rmx.save('mapa_principal_rmx.html')
 webbrowser.open('mapa_principal_rmx.html')
 
 #para manejarlo como un módulo: Cerrar el módulo
-return app
+#return app
 if __name__ == '__main__':
     app = mapas()
     app.run()
+
